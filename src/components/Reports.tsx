@@ -1238,7 +1238,7 @@ export function Reports({ userType = "volunteer", onViewReportDetail, scannedLoc
             )}
 
             <div>
-              <Label htmlFor="location">{t('reports.location')}</Label>
+              <Label htmlFor="location">{t('reports.locationDetected')}</Label>
               <div className="flex gap-2">
                 <Input 
                   id="location"

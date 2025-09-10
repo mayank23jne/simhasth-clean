@@ -100,102 +100,73 @@ export function Login({ onLogin }: LoginProps) {
         
         <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6">
           {!selectedUserType ? (
-            <div className="space-y-3 sm:space-y-4">
-              <p className="text-sm sm:text-base text-muted-foreground/80 font-medium text-center">
-                Choose your role to explore Simhastha CleanMap
-              </p>
-              <Button
-                onClick={() => setSelectedUserType("volunteer")}
-                className="w-full text-white border-0 hover:opacity-90 transition-opacity"
-                variant="outline"
-                style={{ 
-                  minHeight: '80px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  gap: '8px', 
-                  padding: '16px',
-                  backgroundColor: '#10b981' // Green color
-                }}
-              >
-                <Users size={24} style={{ flexShrink: 0 }} />
-                <span className="font-medium text-sm">{t('login.volunteer')}</span>
-                <span className="text-xs opacity-80">{t('login.volunteerDesc')}</span>
-              </Button>
+            <div className="space-y-4 sm:space-y-6">
+              <div className="text-center">
+                <span className="inline-block bg-gradient-to-r from-blue-500 to-green-500 text-white px-4 py-2 rounded-full text-sm sm:text-base font-semibold shadow-md animate-pulse">
+                  ✨ Quick Demo Login ✨
+                </span>
+                <p className="text-sm text-muted-foreground/80 font-medium mt-3">
+                  Choose your role to explore Simhastha CleanMap
+                </p>
+              </div>
               
-              <Button
-                onClick={() => setSelectedUserType("staff")}
-                className="w-full text-white border-0 hover:opacity-90 transition-opacity"
-                variant="outline"
-                style={{ 
-                  minHeight: '80px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  gap: '8px', 
-                  padding: '16px',
-                  backgroundColor: '#3b82f6' // Blue color
-                }}
-              >
-                <UserCheck size={24} style={{ flexShrink: 0 }} />
-                <span className="font-medium text-sm">{t('login.staff')}</span>
-                <span className="text-xs opacity-80">{t('login.staffDesc')}</span>
-              </Button>
+              <div className="space-y-3">
+                <Button 
+                  onClick={() => quickLogin("volunteer")}
+                  className="w-full text-white border-0 hover:opacity-90 transition-all duration-200 transform hover:scale-105"
+                  variant="outline"
+                  style={{ 
+                    minHeight: '60px', 
+                    display: 'flex', 
+                    flexDirection: 'row', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    gap: '12px', 
+                    padding: '16px',
+                    backgroundColor: '#10b981' // Green color
+                  }}
+                >
+                  <Users size={20} style={{ flexShrink: 0 }} />
+                  <span className="font-semibold text-sm">🙋‍♂️ Volunteer/श्रद्धालु</span>
+                </Button>
+                
+                <Button 
+                  onClick={() => quickLogin("staff")}
+                  className="w-full text-white border-0 hover:opacity-90 transition-all duration-200 transform hover:scale-105"
+                  variant="outline"
+                  style={{ 
+                    minHeight: '60px', 
+                    display: 'flex', 
+                    flexDirection: 'row', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    gap: '12px', 
+                    padding: '16px',
+                    backgroundColor: '#3b82f6' // Blue color
+                  }}
+                >
+                  <UserCheck size={20} style={{ flexShrink: 0 }} />
+                  <span className="font-semibold text-sm">👷‍♂️ Sanitation Staff</span>
+                </Button>
 
-              <Button
-                onClick={() => setSelectedUserType("admin")}
-                className="w-full text-white border-0 hover:opacity-90 transition-opacity"
-                variant="outline"
-                style={{ 
-                  minHeight: '80px', 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  gap: '8px', 
-                  padding: '16px',
-                  backgroundColor: '#f97316' // Orange color
-                }}
-              >
-                <Shield size={24} style={{ flexShrink: 0 }} />
-                <span className="font-medium text-sm">{t('login.admin')}</span>
-                <span className="text-xs opacity-80">{t('login.adminDesc')}</span>
-              </Button>
-
-              <div className="pt-3 sm:pt-4 border-t">
-                <div className="text-center mb-4 sm:mb-6">
-                  <span className="inline-block bg-gradient-to-r from-blue-500 to-green-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold shadow-md animate-pulse">
-                    ✨ Quick Demo Login ✨
-                  </span>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
-                  <Button 
-                    onClick={() => quickLogin("volunteer")}
-                    variant="outline" 
-                    size="sm"
-                    className="text-xs bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 font-semibold px-2 py-2 min-h-[36px]"
-                  >
-                    🙋‍♂️ Volunteer/श्रद्धालु
-                  </Button>
-                  <Button 
-                    onClick={() => quickLogin("staff")}
-                    variant="outline" 
-                    size="sm"
-                    className="text-xs bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 font-semibold px-2 py-2 min-h-[36px]"
-                  >
-                    👷‍♂️ Sanitation Staff
-                  </Button>
-                  <Button 
-                    onClick={() => quickLogin("admin")}
-                    variant="outline" 
-                    size="sm"
-                    className="text-xs bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 font-semibold px-2 py-2 min-h-[36px]"
-                  >
-                    👨‍💼 Admin
-                  </Button>
-                </div>
+                <Button 
+                  onClick={() => quickLogin("admin")}
+                  className="w-full text-white border-0 hover:opacity-90 transition-all duration-200 transform hover:scale-105"
+                  variant="outline"
+                  style={{ 
+                    minHeight: '60px', 
+                    display: 'flex', 
+                    flexDirection: 'row', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    gap: '12px', 
+                    padding: '16px',
+                    backgroundColor: '#f97316' // Orange color
+                  }}
+                >
+                  <Shield size={20} style={{ flexShrink: 0 }} />
+                  <span className="font-semibold text-sm">👨‍💼 Admin</span>
+                </Button>
               </div>
             </div>
           ) : (
